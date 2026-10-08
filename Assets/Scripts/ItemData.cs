@@ -1,6 +1,9 @@
 using UnityEngine;
 
+// Item/ScoreItem メニュー名、初期アイテム名は ScoreItem
 [CreateAssetMenu(menuName = "Item/ScoreItem", fileName = "ScoreItem")]
+
+
 public class ItemData : ScriptableObject
 {
     public int value = 0;           // アイテム値

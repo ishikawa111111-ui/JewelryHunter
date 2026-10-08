@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TimeController : MonoBehaviour
@@ -11,25 +12,30 @@ public class TimeController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (isCountDown)
+        if (isCountDown)    //bool型 if (isCountDown == true)と同じ。省略
         {
             displayTime = gameTime;     // カウントダウン
         }
+
+        //if(!isCountDown) // ! を付けるとif (isCountDown == false)or(isCountDown != true)と同じ。省略
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isTimeOver == false)
+        if (isTimeOver == false)    //タイムオーバーでないなら、処理
         {
-            times += Time.deltaTime;
+            times += Time.deltaTime;    //毎フレームかかった時間を足しているので、経過時間
+
+
             if (isCountDown)        // カウントダウン
             {
                 displayTime = gameTime - times;
                 if (displayTime <= 0.0f)
                 {
                     displayTime = 0.0f;
-                    isTimeOver = true;
+                    isTimeOver = true;  //時間が0になったらタイムオーバー
                 }
             }
             else                    // カウントアップ
@@ -38,7 +44,7 @@ public class TimeController : MonoBehaviour
                 if (displayTime >= gameTime)
                 {
                     displayTime = gameTime;
-                    isTimeOver = true;
+                    isTimeOver = true;  //時間上限になったらタイムオーバー
                 }
             }
             //Debug.Log("TIMES: " + displayTime);
