@@ -7,7 +7,7 @@ public class ShellController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Destroy(gameObject, deleteTime); // 削除設定
+        Destroy(gameObject, deleteTime); // 削除設定    第二引数後にDestroy実行される
     }
 
     // Update is called once per frame

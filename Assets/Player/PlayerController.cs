@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
 
-        Application.targetFrameRate = 15;   // 低FPS 固定で消費電力を抑える
+        // Application.targetFrameRate = 15;   // 低FPS 固定で消費電力を抑える
 
         rbody = this.GetComponent<Rigidbody2D>();
         // Rigidbodyを取ってくる。このスクリプトでRigidbodyコンポーネントに干渉するため
@@ -69,7 +69,8 @@ public class PlayerController : MonoBehaviour
         oldAnime = stopAnime;   // 初期状態、停止から開始する
 
         gameState = GameState.InGame;
-//        PlayerController.gameState = GameState.InGame;
+        //        PlayerController.gameState = GameState.InGame;
+
 
     }
 
@@ -274,6 +275,7 @@ public class PlayerController : MonoBehaviour
         GetComponent<CapsuleCollider2D>().enabled = false;
         rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
 
+        Destroy(gameObject, 1.0f);  //追加、１秒後に消す
         // enabled = false;    //余計なもの追加してみた
 
     }

@@ -175,13 +175,23 @@ MonoBehaviour:
   jump: 9
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   dashSpeed: 12
   stopAnime: PlayerStop
   moveAnime: PlayerMove
   jumpAnime: PlayerJump
   goalAnime: PlayerGoal
   deadAnime: PlayerDead
+  camLeft: 0
+  camRight: 0
+  camTop: 0
+  camBottom: 0
+  subScreen: {fileID: 0}
+  isForceScrollx: 0
+  forceScrollSpeedx: 0.5
+  isForceScrolly: 0
+  forceScrollSpeedy: 0.5
+  score: 0
 --- !u!95 &3987148662905130600
 Animator:
   serializedVersion: 7
